@@ -552,6 +552,28 @@ h3 {
   color: var(--accent-deep);
 }
 
+.bio-service {
+  margin-top: 34px;
+  padding: 24px 26px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+}
+
+.bio-service h3 {
+  margin-bottom: 9px;
+  color: var(--accent-deep);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.bio-service p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
 .fact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -584,6 +606,50 @@ h3 {
 .fact-grid strong {
   font-size: 14px;
   line-height: 1.45;
+}
+
+.bio-japanese {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+}
+
+.bio-japanese summary {
+  position: relative;
+  padding: 17px 50px 17px 20px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.bio-japanese summary::-webkit-details-marker {
+  display: none;
+}
+
+.bio-japanese summary::after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--accent-deep);
+  content: "+";
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
+  transform: translateY(-53%);
+}
+
+.bio-japanese[open] summary::after {
+  content: "−";
+}
+
+.bio-japanese p {
+  margin: 0;
+  padding: 0 20px 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
 }
 
 .research-section {
