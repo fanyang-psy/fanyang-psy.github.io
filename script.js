@@ -5,6 +5,21 @@ const menuToggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 const navLinks = [...document.querySelectorAll(".primary-nav a")];
 const sections = [...document.querySelectorAll("main section[id]")];
+const isJapanese = root.lang === "ja";
+
+const labels = isJapanese
+  ? {
+      lightTheme: "ライトテーマに切り替える",
+      darkTheme: "ダークテーマに切り替える",
+      openMenu: "メニューを開く",
+      closeMenu: "メニューを閉じる"
+    }
+  : {
+      lightTheme: "Switch to light theme",
+      darkTheme: "Switch to dark theme",
+      openMenu: "Open menu",
+      closeMenu: "Close menu"
+    };
 
 const getPreferredTheme = () => {
   const savedTheme = localStorage.getItem("theme");
@@ -14,8 +29,8 @@ const getPreferredTheme = () => {
 
 const setTheme = (theme) => {
   root.dataset.theme = theme;
-  themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
-  document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "dark" ? "#111713" : "#f4f1ea");
+  themeToggle.setAttribute("aria-label", theme === "dark" ? labels.lightTheme : labels.darkTheme);
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", theme === "dark" ? "#151417" : "#f4f1ea");
 };
 
 setTheme(getPreferredTheme());
@@ -28,7 +43,7 @@ themeToggle.addEventListener("click", () => {
 
 const closeMenu = () => {
   menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open menu");
+  menuToggle.setAttribute("aria-label", labels.openMenu);
   nav.classList.remove("is-open");
   document.body.classList.remove("menu-open");
 };
@@ -36,7 +51,7 @@ const closeMenu = () => {
 menuToggle.addEventListener("click", () => {
   const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
   menuToggle.setAttribute("aria-expanded", String(willOpen));
-  menuToggle.setAttribute("aria-label", willOpen ? "Close menu" : "Open menu");
+  menuToggle.setAttribute("aria-label", willOpen ? labels.closeMenu : labels.openMenu);
   nav.classList.toggle("is-open", willOpen);
   document.body.classList.toggle("menu-open", willOpen);
 });
