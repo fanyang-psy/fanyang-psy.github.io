@@ -35,7 +35,7 @@
     navActions.insertBefore(wrap, navActions.firstChild);
   }
 
-  const scaleHref = lang === 'ja' ? '/scales/ja.html' : lang === 'zh' ? '/scales/zh.html' : '/scales/';
+  const scaleHref = lang === 'ja' ? '/scales/?lang=ja' : lang === 'zh' ? '/scales/zh.html' : '/scales/?lang=en';
   document.querySelectorAll('a[href^="/scales/"]').forEach((a) => {
     a.href = scaleHref;
   });
