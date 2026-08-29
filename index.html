@@ -8,14 +8,82 @@
     <meta name="author" content="Fan Yang">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fanyang-psy.github.io/">
-    <meta property="og:title" content="Fan Yang, Ph.D. — Psychology Researcher">
+    <meta property="og:title" content="Fan Yang | Social Psychologist">
     <meta property="og:description" content="Research on attachment, mindfulness, self and resilience, and human–AI relationships.">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/322077524?v=4&amp;size=800">
+    <meta property="og:image" content="https://fanyang-psy.github.io/assets/fan-yang-official.png">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://fanyang-psy.github.io/">
+    <link rel="alternate" hreflang="en" href="https://fanyang-psy.github.io/">
+    <link rel="alternate" hreflang="ja" href="https://fanyang-psy.github.io/ja.html">
     <link rel="icon" href="https://github.com/fanyang-psy.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
-    <title>Fan Yang, Ph.D. — Psychology Researcher</title>
+    <style>
+      .research-section {
+        background: var(--surface);
+        color: var(--text);
+      }
+      .research-section .research-card {
+        background: var(--surface-strong);
+      }
+      .hero h1.hero-name {
+        max-width: 720px;
+        margin-bottom: 12px;
+        font-size: clamp(64px, 8vw, 112px);
+        letter-spacing: -0.06em;
+        line-height: 0.92;
+      }
+      .hero-role {
+        margin: 0 0 24px;
+        color: var(--accent-deep);
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.055em;
+      }
+      .hero-tagline {
+        max-width: 700px;
+        margin: 0 0 20px;
+        font-family: var(--display);
+        font-size: clamp(28px, 3.35vw, 43px);
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        line-height: 1.16;
+      }
+      .hero .hero-intro {
+        max-width: 620px;
+        margin-bottom: 32px;
+        font-size: clamp(16px, 1.65vw, 19px);
+      }
+      .menu-toggle {
+        gap: 4px;
+      }
+      .menu-toggle span,
+      .menu-toggle span + span {
+        width: 18px;
+        height: 1.5px;
+        margin-top: 0;
+        border-radius: 999px;
+        transition: transform 180ms ease, opacity 180ms ease;
+      }
+      .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(5.5px) rotate(45deg);
+      }
+      .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0.25);
+      }
+      .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-5.5px) rotate(-45deg);
+      }
+      @media (max-width: 680px) {
+        .hero h1.hero-name {
+          font-size: clamp(58px, 20vw, 86px);
+        }
+        .hero-tagline {
+          font-size: clamp(27px, 9vw, 38px);
+        }
+      }
+    </style>
+    <title>Fan Yang | Social Psychologist</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -24,19 +92,20 @@
         "alternateName": "楊帆",
         "honorificSuffix": "Ph.D.",
         "url": "https://fanyang-psy.github.io/",
-        "image": "https://avatars.githubusercontent.com/u/322077524?v=4&size=800",
+        "image": "https://fanyang-psy.github.io/assets/fan-yang-official.png",
         "jobTitle": "Assistant Professor",
         "worksFor": {
           "@type": "CollegeOrUniversity",
           "name": "Waseda University",
           "url": "https://www.waseda.jp/"
         },
-        "email": "mailto:fan.yang@ruri.waseda.jp",
+        "email": "mailto:psy.fyang@gmail.com",
         "sameAs": [
           "https://orcid.org/0000-0002-7961-3111",
           "https://researchmap.jp/fan.yang?lang=en",
-          "https://github.com/fanyang-psy",
-          "https://www.fanyangpsy.com/"
+          "https://researchmap.jp/fan.yang?lang=ja",
+          "https://scholar.google.com/citations?user=OyVh94cAAAAJ&hl=ja&oi=sra",
+          "https://github.com/fanyang-psy"
         ],
         "knowsAbout": [
           "Attachment theory",
@@ -47,7 +116,8 @@
         ]
       }
     </script>
-  </head>
+    <script src="/visitor-stats.js" defer></script>
+</head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
@@ -67,12 +137,13 @@
         </nav>
 
         <div class="nav-actions">
+          <a class="language-link" href="ja.html" lang="ja" hreflang="ja" aria-label="日本語版を開く">JP</a>
           <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark theme" data-theme-toggle>
             <svg class="sun-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path></svg>
             <svg class="moon-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path></svg>
           </button>
           <button class="icon-button menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu" data-menu-toggle>
-            <span></span><span></span>
+            <span></span><span></span><span></span>
           </button>
         </div>
       </div>
@@ -85,26 +156,29 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow"><span></span> Psychology · Waseda University</p>
-            <h1 id="hero-title">Understanding how we <em>connect</em>—with people, ourselves, and AI.</h1>
-            <p class="hero-intro">I’m Fan Yang <span lang="ja">（楊帆）</span>, Ph.D., an assistant professor studying attachment, mindfulness, and the psychological dynamics of human–AI relationships.</p>
+            <h1 id="hero-title" class="hero-name">Fan Yang</h1>
+            <p class="hero-role">Assistant Professor · Faculty of Letters, Arts and Sciences · Waseda University</p>
+            <p class="hero-tagline">From interpersonal relationships to human–AI relationships, I study the psychology of connection.</p>
+            <p class="hero-intro">My research uses attachment theory to examine attachment security, mindfulness, the self, and psychologically meaningful relationships with generative AI.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="#research">Explore my research <span aria-hidden="true">↓</span></a>
-              <a class="button button-secondary" href="mailto:fan.yang@ruri.waseda.jp">Get in touch <span aria-hidden="true">↗</span></a>
+              <a class="button button-secondary" href="mailto:psy.fyang@gmail.com">psy.fyang@gmail.com <span aria-hidden="true">↗</span></a>
             </div>
             <ul class="profile-links" aria-label="Research profiles">
               <li><a href="https://orcid.org/0000-0002-7961-3111" target="_blank" rel="me noopener">ORCID <span aria-hidden="true">↗</span></a></li>
-              <li><a href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="me noopener">researchmap <span aria-hidden="true">↗</span></a></li>
-              <li><a href="https://w-rdb.waseda.jp/html/100004412_en.html" target="_blank" rel="noopener">Waseda profile <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="me noopener">researchmap — English <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://researchmap.jp/fan.yang?lang=ja" target="_blank" rel="me noopener">researchmap — 日本語 <span aria-hidden="true">↗</span></a></li>
+              <li><a href="https://scholar.google.com/citations?user=OyVh94cAAAAJ&amp;hl=ja&amp;oi=sra" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a></li>
             </ul>
           </div>
 
           <div class="portrait-wrap" aria-label="Portrait of Fan Yang">
             <div class="portrait-frame">
-              <img src="https://avatars.githubusercontent.com/u/322077524?v=4&amp;size=800" width="720" height="720" alt="Fan Yang" fetchpriority="high">
+              <img src="assets/fan-yang-official.png" width="1280" height="720" alt="Portrait of Fan Yang" fetchpriority="high">
             </div>
             <div class="portrait-note">
               <span class="status-dot" aria-hidden="true"></span>
-              <p><strong>Assistant Professor</strong><br>Faculty of Letters, Arts and Sciences<br>Waseda University · Tokyo</p>
+              <p><strong>Social &amp; Personality Psychology</strong><br>Waseda University<br>Tokyo, Japan</p>
             </div>
           </div>
         </div>
@@ -114,17 +188,21 @@
         <div class="container section-grid">
           <div class="section-heading">
             <p class="section-index">01 — About</p>
-            <h2 id="about-title">Research at the meeting point of relationships and the mind.</h2>
+            <h2 id="about-title">Attachment theory as a lens on connection, cognition, and the self.</h2>
           </div>
           <div class="prose about-copy">
-            <p class="lead">My work asks a simple question with far-reaching implications: <em>What helps people feel secure enough to understand themselves, explore, and grow?</em></p>
-            <p>I approach this question through attachment theory and study its connections with mindfulness, self-concept clarity, resilience, and personal growth. More recently, I have extended this perspective to human–AI relationships—examining how people form emotional bonds with generative AI and how those bonds shape interaction and self-understanding.</p>
-            <p>I use cross-sectional, longitudinal, diary, dyadic, and scale-development methods. Across these approaches, my aim is to connect careful psychological measurement with questions that matter in everyday life.</p>
+            <p class="lead">I study how attachment security shapes the way people understand themselves, explore their world, and grow—and how these processes extend into relationships with AI.</p>
+            <p>I am an Assistant Professor in the Faculty of Letters, Arts and Sciences at Waseda University in Tokyo. Working across social, personality, and educational psychology, I bring attachment theory into dialogue with mindfulness, self-concept clarity, self-compassion, resilience, and belief in free will.</p>
+            <p>My current research follows two closely connected directions: attachment-security priming in cognition and social cognition, and AI attachment—the ways people seek reassurance, trust, disclose, and feel connected in interactions with generative AI. I use cross-sectional, longitudinal, weekly diary, dyadic, and scale-development designs to connect careful psychological measurement with questions that matter in everyday life.</p>
+            <aside class="bio-service" aria-labelledby="community-title">
+              <h3 id="community-title">Research community &amp; public engagement</h3>
+              <p>Beyond research, I serve on the Public Relations Committee of the Japanese Psychological Association and review manuscripts for international psychology journals. My research on attachment and human–AI relationships has been introduced to audiences across several countries and languages.</p>
+            </aside>
             <div class="fact-grid" aria-label="Profile facts">
-              <div><span>Based in</span><strong>Tokyo, Japan</strong></div>
-              <div><span>Field</span><strong>Social &amp; personality psychology</strong></div>
-              <div><span>Languages</span><strong>English · Japanese · Chinese</strong></div>
-              <div><span>ORCID</span><strong>0000-0002-7961-3111</strong></div>
+              <div><span>Current role</span><strong>Assistant Professor</strong></div>
+              <div><span>Affiliation</span><strong>Waseda University</strong></div>
+              <div><span>Research areas</span><strong>Social &amp; personality psychology</strong></div>
+              <div><span>Professional service</span><strong>JPA Public Relations Committee</strong></div>
             </div>
           </div>
         </div>
@@ -141,7 +219,7 @@
           </div>
 
           <div class="research-grid">
-            <article class="research-card featured-card">
+            <article class="research-card">
               <span class="card-number">01</span>
               <div class="card-symbol" aria-hidden="true">
                 <svg viewBox="0 0 80 80"><circle cx="30" cy="40" r="20"></circle><circle cx="50" cy="40" r="20"></circle><path d="M40 19v42"></path></svg>
@@ -185,72 +263,54 @@
           <div class="section-heading heading-row publication-heading">
             <div>
               <p class="section-index">03 — Publications</p>
-              <h2 id="publications-title">Selected publications.</h2>
+              <h2 id="publications-title">Peer-reviewed publications.</h2>
             </div>
-            <a class="text-link" href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="noopener">View full record on researchmap <span aria-hidden="true">↗</span></a>
+            <div class="record-links" aria-label="Complete research records">
+              <a class="text-link" href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="noopener">researchmap — English <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://researchmap.jp/fan.yang?lang=ja" target="_blank" rel="noopener">researchmap — 日本語 <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://scholar.google.com/citations?user=OyVh94cAAAAJ&amp;hl=ja&amp;oi=sra" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
 
-          <article class="spotlight-publication">
-            <div class="spotlight-meta">
-              <span>Latest research</span>
-              <span>2026</span>
-            </div>
-            <div class="spotlight-body">
-              <div>
-                <p class="journal">Asian Journal of Social Psychology</p>
-                <h3>Attachment towards generative AI influences self–AI agreement in personality reports</h3>
-                <p class="authors"><strong>Fan Yang</strong> &amp; Atsushi Oshio</p>
+          <div class="publication-columns">
+            <section class="publication-group" aria-labelledby="first-author-title">
+              <div class="publication-group-heading">
+                <h3 id="first-author-title">First-author articles</h3>
+                <span>13</span>
               </div>
-              <a class="circle-link" href="https://doi.org/10.1111/ajsp.70102" target="_blank" rel="noopener" aria-label="Open latest publication">
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </article>
+              <ol class="compact-publication-list">
+                <li><p><strong>Yang, F.</strong>, &amp; Xie, K. (2026). Imagining the future or recalling the past: Effects on state attachment security through episodic priming. <em>International Journal of Psychology, 61</em>(5), e70252. <a href="https://doi.org/10.1002/ijop.70252" target="_blank" rel="noopener">https://doi.org/10.1002/ijop.70252</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oshio, A. (2026). Attachment towards generative AI influences self–AI agreement in personality reports. <em>Asian Journal of Social Psychology, 29</em>(3), e70102. <a href="https://doi.org/10.1111/ajsp.70102" target="_blank" rel="noopener">https://doi.org/10.1111/ajsp.70102</a></p></li>
+                <li><p><strong>Yang, F.</strong>, Zhang, Z., Sawada, N., &amp; Oshio, A. (2026). The influence of attachment style on the extent to which the content of episodic future thinking relates to interpersonal relationships. <em>Journal of Individual Differences, 47</em>(2), 107–115. <a href="https://doi.org/10.1027/1614-0001/a000462" target="_blank" rel="noopener">https://doi.org/10.1027/1614-0001/a000462</a></p></li>
+                <li><p><strong>Yang, F.</strong>, Sawada, N., &amp; Oshio, A. (2026). Development and validation of the Japanese version of the Langer Mindfulness Scale. <em>Japanese Psychological Research, 68</em>(2), 298–309. <a href="https://doi.org/10.1111/jpr.12490" target="_blank" rel="noopener">https://doi.org/10.1111/jpr.12490</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oshio, A. (2025). Mindfulness mediates the relationship between attachment style and general self-efficacy: Preliminary evidence from cross-sectional and cross-lagged studies. <em>Journal of Individual Differences, 46</em>(3), 138–147. <a href="https://doi.org/10.1027/1614-0001/a000444" target="_blank" rel="noopener">https://doi.org/10.1027/1614-0001/a000444</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oshio, A. (2025). Using attachment theory to conceptualize and measure the experiences in human–AI relationships. <em>Current Psychology, 44</em>, 10658–10669. <a href="https://doi.org/10.1007/s12144-025-07917-6" target="_blank" rel="noopener">https://doi.org/10.1007/s12144-025-07917-6</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oshio, A. (2025). The mediating role of mindfulness between attachment style and self-concept clarity within a dyadic context. <em>Current Issues in Personality Psychology, 13</em>(4), 217–225. <a href="https://doi.org/10.5114/cipp/197265" target="_blank" rel="noopener">https://doi.org/10.5114/cipp/197265</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oshio, A. (2025). Not feeling safe enough to explore more aspects: Dichotomous thinking mediates the relationship between attachment style and resilience. <em>Journal of Individual Differences, 46</em>(1), 33–41. <a href="https://doi.org/10.1027/1614-0001/a000432" target="_blank" rel="noopener">https://doi.org/10.1027/1614-0001/a000432</a></p></li>
+                <li><p><strong>Yang, F.</strong>, Ren, M., &amp; Oshio, A. (2024). The effect of attachment style on mindfulness: Findings from a weekly diary study using latent growth modeling. <em>Current Psychology, 43</em>(32), 26395–26402. <a href="https://doi.org/10.1007/s12144-024-06310-z" target="_blank" rel="noopener">https://doi.org/10.1007/s12144-024-06310-z</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oshio, A. (2024). A secure mind is a clear mind: The relationship between attachment security, mindfulness, and self-concept clarity. <em>Current Psychology, 43</em>(12), 11276–11287. <a href="https://doi.org/10.1007/s12144-023-05250-4" target="_blank" rel="noopener">https://doi.org/10.1007/s12144-023-05250-4</a></p></li>
+                <li><p><strong>Yang, F.</strong>, Hagiwara, C., Kotani, T., Hirao, J., &amp; Oshio, A. (2023). Comparing self-esteem and self-compassion: An analysis within the Big Five personality traits framework. <em>Frontiers in Psychology, 14</em>, 1302197. <a href="https://doi.org/10.3389/fpsyg.2023.1302197" target="_blank" rel="noopener">https://doi.org/10.3389/fpsyg.2023.1302197</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oka, T. (2023). Free from your experiences to grow: Belief in free will moderates the relationship between attachment avoidance and personal growth initiative. <em>BMC Psychology, 11</em>, 243. <a href="https://doi.org/10.1186/s40359-023-01289-x" target="_blank" rel="noopener">https://doi.org/10.1186/s40359-023-01289-x</a></p></li>
+                <li><p><strong>Yang, F.</strong>, &amp; Oka, T. (2022). The role of mindfulness and attachment security in facilitating resilience. <em>BMC Psychology, 10</em>, 69. <a href="https://doi.org/10.1186/s40359-022-00772-1" target="_blank" rel="noopener">https://doi.org/10.1186/s40359-022-00772-1</a></p></li>
+              </ol>
+            </section>
 
-          <ol class="publication-list" reversed>
-            <li>
-              <span class="pub-year">2026</span>
-              <div>
-                <p>Luo, X., Zhou, Z., <strong>Yang, F.</strong>, Wang, Y., Ren, M., &amp; Zhou, L. (2026). When protection leads to insecurity: Examining the cross-lagged relationship between overparenting and attachment style. <em>Asian Journal of Social Psychology, 29</em>(1), e70079.</p>
-                <a href="https://doi.org/10.1111/ajsp.70079" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
+            <section class="publication-group" aria-labelledby="coauthor-title">
+              <div class="publication-group-heading">
+                <h3 id="coauthor-title">Co-authored articles</h3>
+                <span>7</span>
               </div>
-            </li>
-            <li>
-              <span class="pub-year">2025</span>
-              <div>
-                <p><strong>Yang, F.</strong>, &amp; Oshio, A. (2025). Using attachment theory to conceptualize and measure the experiences in human–AI relationships. <em>Current Psychology, 44</em>, 10658–10669.</p>
-                <a href="https://doi.org/10.1007/s12144-025-07917-6" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-              </div>
-            </li>
-            <li>
-              <span class="pub-year">2025</span>
-              <div>
-                <p><strong>Yang, F.</strong>, &amp; Oshio, A. (2025). Mindfulness mediates the relationship between attachment style and general self-efficacy: Preliminary evidence from cross-sectional and cross-lagged studies. <em>Journal of Individual Differences, 46</em>(3), 138–147.</p>
-                <a href="https://doi.org/10.1027/1614-0001/a000444" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-              </div>
-            </li>
-            <li>
-              <span class="pub-year">2024</span>
-              <div>
-                <p><strong>Yang, F.</strong>, Ren, M., &amp; Oshio, A. (2024). The effect of attachment style on mindfulness: Findings from a weekly diary study using latent growth modeling. <em>Current Psychology, 43</em>(32), 26395–26402.</p>
-                <a href="https://doi.org/10.1007/s12144-024-06310-z" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-              </div>
-            </li>
-            <li>
-              <span class="pub-year">2023</span>
-              <div>
-                <p><strong>Yang, F.</strong>, Sawada, N., &amp; Oshio, A. (2023). Development and validation of the Japanese version of the Langer Mindfulness Scale. <em>Japanese Psychological Research</em>.</p>
-                <a href="https://doi.org/10.1111/jpr.12490" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-              </div>
-            </li>
-            <li>
-              <span class="pub-year">2022</span>
-              <div>
-                <p><strong>Yang, F.</strong>, &amp; Oka, T. (2022). The role of mindfulness and attachment security in facilitating resilience. <em>BMC Psychology, 10</em>, 69.</p>
-                <a href="https://doi.org/10.1186/s40359-022-00772-1" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a>
-              </div>
-            </li>
-          </ol>
+              <ol class="compact-publication-list">
+                <li><p>Zhou, R., Morita, N., Ogai, Y., Koga, Y., <strong>Yang, F.</strong>, Yang, W., &amp; Zhu, C. (2026). Preliminary outcomes of a five-session motivation-centered program for internet gaming disorder: A completer analysis of a randomized trial. <em>Behavioral Sciences, 16</em>(9), 1500. <a href="https://doi.org/10.3390/bs16091500" target="_blank" rel="noopener">https://doi.org/10.3390/bs16091500</a></p></li>
+                <li><p>Cui, Z., Gao, E., <strong>Yang, F.</strong>, Liu, Q., &amp; Yao, H. (2026). Exploring the effects of an AI voice assistant on drivers’ loneliness and affect during long-distance driving under partial driving automation. <em>International Journal of Human–Computer Interaction</em>. Advance online publication. <a href="https://doi.org/10.1080/10447318.2026.2674836" target="_blank" rel="noopener">https://doi.org/10.1080/10447318.2026.2674836</a></p></li>
+                <li><p>Zhang, Z., <strong>Yang, F.</strong>, &amp; Horiuchi, T. (2026). The predictive role of future anxiety in anxiety toward future life events in Japanese university students: Controlling for trait anxiety. <em>Journal of Human Environmental Studies, 24</em>(1), 21–26. <a href="https://www.jstage.jst.go.jp/article/shes/24/1/24_21/_article/-char/en" target="_blank" rel="noopener">J-STAGE</a></p></li>
+                <li><p>Luo, X., Wei, X., <strong>Yang, F.</strong>, Ren, M., &amp; Xia, Y. (2026). Interactive relationships in marital attachment: A cross-lagged panel network analysis. <em>International Journal of Psychology, 61</em>(2), e70180. <a href="https://doi.org/10.1002/ijop.70180" target="_blank" rel="noopener">https://doi.org/10.1002/ijop.70180</a></p></li>
+                <li><p>Luo, X., Zhou, Z., <strong>Yang, F.</strong>, Wang, Y., Ren, M., &amp; Zhou, L. (2026). When protection leads to insecurity: Examining the cross-lagged relationship between overparenting and attachment style. <em>Asian Journal of Social Psychology, 29</em>(1), e70079. <a href="https://doi.org/10.1111/ajsp.70079" target="_blank" rel="noopener">https://doi.org/10.1111/ajsp.70079</a></p></li>
+                <li><p>Cui, Z., <strong>Yang, F.</strong>, Zhou, H., Li, X., &amp; Itoh, M. (2025). Using video introduction to mitigate affect-based initial trust in automation. <em>Japanese Psychological Research</em>. Advance online publication. <a href="https://doi.org/10.1111/jpr.12586" target="_blank" rel="noopener">https://doi.org/10.1111/jpr.12586</a></p></li>
+                <li><p>Zhou, R., Morita, N., Ogai, Y., Saito, T., Zhang, X., Yang, W., &amp; <strong>Yang, F.</strong> (2024). Meta-analysis of internet gaming disorder prevalence: Assessing the impacts of DSM-5 and ICD-11 diagnostic criteria. <em>International Journal of Environmental Research and Public Health, 21</em>(6), 700. <a href="https://doi.org/10.3390/ijerph21060700" target="_blank" rel="noopener">https://doi.org/10.3390/ijerph21060700</a></p></li>
+              </ol>
+            </section>
+          </div>
         </div>
       </section>
 
@@ -259,17 +319,16 @@
           <div class="section-heading cv-heading">
             <p class="section-index">04 — Curriculum vitae</p>
             <h2 id="cv-title">Academic path &amp; service.</h2>
-            <p>A concise overview. For the most current and complete record, see my researchmap profile.</p>
-            <a class="button button-secondary" href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="noopener">Full academic record <span aria-hidden="true">↗</span></a>
+            <p>A concise overview. For the most current and complete record, see my researchmap profile in English.</p>
+            <a class="button button-secondary" href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="noopener">researchmap — English <span aria-hidden="true">↗</span></a>
           </div>
 
           <div class="timeline-wrap">
             <section class="timeline-group" aria-labelledby="appointments-title">
               <h3 id="appointments-title">Appointments</h3>
               <ol class="timeline">
-                <li><span>2025—present</span><div><strong>Assistant Professor</strong><p>Faculty of Letters, Arts and Sciences, Waseda University</p></div></li>
+                <li><span>2026—present</span><div><strong>Assistant Professor</strong><p>Faculty of Letters, Arts and Sciences, Waseda University</p></div></li>
                 <li><span>2025—present</span><div><strong>Part-Time Lecturer</strong><p>Tokyo Kasei University</p></div></li>
-                <li><span>2024—2025</span><div><strong>Assistant Professor</strong><p>Chengdu University</p></div></li>
               </ol>
             </section>
 
@@ -286,7 +345,8 @@
               <ol class="timeline">
                 <li><span>2025—2027</span><div><strong>JSPS KAKENHI</strong><p>Grant-in-Aid for Research Activity Start-up</p></div></li>
                 <li><span>2025</span><div><strong>Young Member Research Encouragement Award</strong><p>The Japanese Society of Applied Psychology</p></div></li>
-                <li><span>2022—present</span><div><strong>Committee on Public Information</strong><p>The Japanese Psychological Association</p></div></li>
+                <li><span>2026—present</span><div><strong>Committee Member</strong><p>Public Relations Committee, Japanese Psychological Association</p></div></li>
+                <li><span>2022—2026</span><div><strong>SNS Manager</strong><p>Committee on Public Information, Japanese Psychological Association</p></div></li>
               </ol>
             </section>
           </div>
@@ -296,14 +356,15 @@
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
         <div class="container contact-inner">
           <p class="section-index">05 — Contact</p>
-          <h2 id="contact-title">Let’s talk about research, collaboration, or ideas.</h2>
+          <h2 id="contact-title">Get in touch.</h2>
           <p>I welcome thoughtful conversations about attachment, mindfulness, personality, and human–AI relationships.</p>
-          <a class="contact-email" href="mailto:fan.yang@ruri.waseda.jp">fan.yang@ruri.waseda.jp <span aria-hidden="true">↗</span></a>
+          <a class="contact-email" href="mailto:psy.fyang@gmail.com">psy.fyang@gmail.com <span aria-hidden="true">↗</span></a>
           <div class="contact-links" aria-label="Social and academic profiles">
             <a href="https://orcid.org/0000-0002-7961-3111" target="_blank" rel="me noopener">ORCID</a>
-            <a href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="me noopener">researchmap</a>
+            <a href="https://researchmap.jp/fan.yang?lang=en" target="_blank" rel="me noopener">researchmap — English</a>
+            <a href="https://researchmap.jp/fan.yang?lang=ja" target="_blank" rel="me noopener">researchmap — 日本語</a>
+            <a href="https://scholar.google.com/citations?user=OyVh94cAAAAJ&amp;hl=ja&amp;oi=sra" target="_blank" rel="noopener">Google Scholar</a>
             <a href="https://github.com/fanyang-psy" target="_blank" rel="me noopener">GitHub</a>
-            <a href="https://www.fanyangpsy.com/" target="_blank" rel="me noopener">Current website</a>
           </div>
         </div>
       </section>
@@ -320,4 +381,3 @@
     <script src="script.js" defer></script>
   </body>
 </html>
-

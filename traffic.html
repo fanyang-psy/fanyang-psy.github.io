@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>访问统计 | Fan Yang</title>
+  <style>
+    :root{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Segoe UI",sans-serif;color:#26231f;background:#f5f2eb}
+    body{margin:0}.wrap{max-width:900px;margin:0 auto;padding:48px 20px 80px}h1{font-size:34px;margin:0 0 8px}.note{color:#777067;line-height:1.7;margin:0 0 28px}.toolbar{display:flex;gap:10px;align-items:center;margin:0 0 20px}.toolbar button{border:1px solid #cfc8bd;background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer}.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 20px}.card{background:#fff;border:1px solid #ddd5ca;border-radius:14px;padding:18px}.card span{display:block;color:#777067;font-size:12px}.card strong{display:block;margin-top:5px;font-size:28px}table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #ddd5ca;border-radius:14px;overflow:hidden}th,td{padding:11px 14px;border-bottom:1px solid #eee8df;text-align:right;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}tr:last-child td{border-bottom:0}@media(max-width:640px){.summary{grid-template-columns:1fr}.wrap{padding-top:28px}th,td{padding:9px 8px;font-size:12px}}
+  </style>
+</head>
+<body><main class="wrap">
+  <h1>访问统计</h1>
+  <p class="note">按日本时间记录，每个浏览器每天最多计数一次。日本 = JP，中国 = CN，其他国家/地区计入海外。数据为轻量级近似访问统计，并非审计级独立访客数据。</p>
+  <div class="toolbar"><button data-days="7">最近 7 天</button><button data-days="30">最近 30 天</button><button data-days="90">最近 90 天</button></div>
+  <section class="summary"><div class="card"><span>日本</span><strong id="sum-japan">—</strong></div><div class="card"><span>中国</span><strong id="sum-china">—</strong></div><div class="card"><span>海外</span><strong id="sum-overseas">—</strong></div></section>
+  <table><thead><tr><th>日期（JST）</th><th>日本</th><th>中国</th><th>海外</th><th>合计</th></tr></thead><tbody id="rows"><tr><td colspan="5">读取中…</td></tr></tbody></table>
+</main>
+<script>
+const API='https://countapi.mileshilliard.com/api/v1/get/';
+const partsFor=(date)=>{const p=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(date);return Object.fromEntries(p.map(x=>[x.type,x.value]))};
+const jstDays=(n)=>{const out=[];const now=new Date();for(let i=0;i<n;i++){const d=new Date(now.getTime()-i*86400000);const p=partsFor(d);out.push({key:`${p.year}${p.month}${p.day}`,label:`${p.year}-${p.month}-${p.day}`})}return out};
+const getCount=async(key)=>{try{const r=await fetch(API+key,{cache:'no-store'});if(!r.ok)return 0;const d=await r.json();return Number(d.value)||0}catch{return 0}};
+async function load(days){const body=document.querySelector('#rows');body.innerHTML='<tr><td colspan="5">读取中…</td></tr>';const dates=jstDays(days);const data=await Promise.all(dates.map(async d=>{const [japan,china,overseas]=await Promise.all(['japan','china','overseas'].map(r=>getCount(`fyacademic-${d.key}-${r}`)));return {...d,japan,china,overseas}}));let sj=0,sc=0,so=0;body.innerHTML=data.map(d=>{sj+=d.japan;sc+=d.china;so+=d.overseas;return `<tr><td>${d.label}</td><td>${d.japan}</td><td>${d.china}</td><td>${d.overseas}</td><td>${d.japan+d.china+d.overseas}</td></tr>`}).join('');document.querySelector('#sum-japan').textContent=sj;document.querySelector('#sum-china').textContent=sc;document.querySelector('#sum-overseas').textContent=so}
+document.querySelectorAll('[data-days]').forEach(b=>b.addEventListener('click',()=>load(Number(b.dataset.days))));load(30);
+</script></body></html>
