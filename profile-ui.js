@@ -53,14 +53,15 @@
             <h3 id="history-appointments-title">${isJapanese ? '職歴' : 'Academic Appointments'}</h3>
             <ol class="history-list">
               <li><span>${isJapanese ? '2026.04—現在' : 'Apr 2026—present'}</span><div><strong>${isJapanese ? '助教' : 'Assistant Professor'}</strong><p>${isJapanese ? '早稲田大学 文学部心理学コース' : 'Faculty of Letters, Arts and Sciences, Waseda University'}</p></div></li>
-              <li><span>2025.09—2026.03</span><div><strong>${isJapanese ? '非常勤講師' : 'Part-Time Lecturer'}</strong><p>${isJapanese ? '東京家政大学' : 'Tokyo Kasei University'}</p></div></li>
+              <li><span>${isJapanese ? '2025.04—2026.03' : 'Apr 2025—Mar 2026'}</span><div><strong>${isJapanese ? '助手' : 'Research Associate'}</strong><p>${isJapanese ? '早稲田大学 文学部心理学コース' : 'Faculty of Letters, Arts and Sciences, Waseda University'}</p></div></li>
+              <li><span>${isJapanese ? '2025.09—2026.03' : 'Sep 2025—Mar 2026'}</span><div><strong>${isJapanese ? '非常勤講師' : 'Part-Time Lecturer'}</strong><p>${isJapanese ? '東京家政大学' : 'Tokyo Kasei University'}</p></div></li>
             </ol>
           </section>
           <section class="history-block" aria-labelledby="history-education-title">
             <h3 id="history-education-title">${isJapanese ? '学歴' : 'Education'}</h3>
             <ol class="history-list">
-              <li><span>2025</span><div><strong>${isJapanese ? '博士（文学）' : 'Ph.D. in Literature'}</strong><p>${isJapanese ? '早稲田大学 · 心理学' : 'Waseda University · Psychology'}</p></div></li>
-              <li><span>2022</span><div><strong>${isJapanese ? '修士（心理学）' : 'Master’s in Psychology'}</strong><p>${isJapanese ? '日本大学' : 'Nihon University'}</p></div></li>
+              <li><span>${isJapanese ? '2022.04—2025.10' : 'Apr 2022—Oct 2025'}</span><div><strong>${isJapanese ? '博士（文学）' : 'Ph.D. (Literature)'}</strong><p>${isJapanese ? '早稲田大学' : 'Waseda University'}</p></div></li>
+              <li><span>${isJapanese ? '2020.04—2022.03' : 'Apr 2020—Mar 2022'}</span><div><strong>${isJapanese ? '修士（心理学）' : 'Master (Psychology)'}</strong><p>${isJapanese ? '日本大学' : 'Nihon University'}</p></div></li>
             </ol>
           </section>
           <section class="history-block history-service-block" aria-labelledby="history-service-title">
