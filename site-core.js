@@ -189,7 +189,7 @@ html[lang="ja"] h3,html[lang="ja"] .primary-nav,html[lang="ja"] .nav-actions,htm
 html[lang="ja"] h2{font-weight:600;letter-spacing:-.02em}.text-arrow{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important;font-style:normal;font-weight:400;font-variant-emoji:text}
 .scale-resource-button{border-color:color-mix(in srgb,var(--accent) 48%,var(--line));background:color-mix(in srgb,var(--accent) 8%,transparent);color:var(--accent-deep)}.scale-resource-button:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent)}
 .cv-grant-link{text-decoration-thickness:1px;text-underline-offset:.18em}.cv-grant-meta{color:var(--muted)}.corresponding-author-mark{margin-left:1px;color:var(--accent-deep);font-size:.72em;font-weight:750;line-height:0;vertical-align:super}.publication-corresponding-note{margin:16px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
-.menu-toggle{gap:2.7px;align-content:center}.menu-toggle span,.menu-toggle span+span{margin-top:0!important}.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(3.8px) rotate(45deg)}.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-3.8px) rotate(-45deg)}
+.menu-toggle{gap:4px;align-content:center}.menu-toggle span,.menu-toggle span+span{width:18px;height:1.5px;margin-top:0!important;border-radius:999px;transition:transform 180ms ease,opacity 180ms ease}.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(5.5px) rotate(45deg)}.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(.25)}.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-5.5px) rotate(-45deg)}
 .hero-degree{display:inline-block;margin-left:.14em;color:var(--muted);font-family:"Avenir Next",Avenir,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:.24em;font-weight:700;letter-spacing:.02em;vertical-align:.72em;white-space:nowrap}.hero-name-roman{display:block;margin-top:12px;color:var(--muted);font-family:"Avenir Next",Avenir,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:.055em;line-height:1.45}.hero-degree-ja{margin:-2px 0 8px;color:var(--muted);font-family:"Hiragino Sans","ヒラギノ角ゴシック","Yu Gothic","游ゴシック",YuGothic,Meiryo,sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em}.page-ja .contact-email span[aria-hidden="true"]{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif!important}
 @media(max-width:680px){.hero-degree{font-size:.27em;vertical-align:.65em}.hero-name-roman,.hero-degree-ja{font-size:12px}}
 `;
@@ -228,6 +228,7 @@ if (menuToggle && nav) {
     document.body.classList.toggle('menu-open',willOpen);
   });
   document.addEventListener('keydown',(event)=>{ if(event.key==='Escape') closeMenu(); });
+  window.addEventListener('resize',()=>{ if(window.innerWidth>920) closeMenu(); },{passive:true});
 }
 const navLinks = [...document.querySelectorAll('.primary-nav a')];
 navLinks.forEach((link)=>link.addEventListener('click',closeMenu));
