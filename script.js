@@ -43,9 +43,9 @@
   };
 
   loadScript('profile-extra.js?v=20260829-2')
-    .then(() => loadScript('profile-ui.js?v=20260829-11'))
-    .then(() => loadScript('site-core.js?v=20260829-1'))
-    .then(() => loadScript('profile-lang.js?v=20260829-2'))
+    .then(() => loadScript('profile-ui.js?v=20260915-1'))
+    .then(() => loadScript('site-core.js?v=20260915-1'))
+    .then(() => loadScript('profile-lang.js?v=20260915-1'))
     .then(() => {
       removeExternalNavLinks();
       window.refreshProfileUI?.();
@@ -60,7 +60,7 @@
     .catch((error) => {
       console.error('Failed to initialize profile enhancements.', error);
       if (!document.querySelector('script[src^="site-core.js"]')) {
-        loadScript('site-core.js?v=20260829-1').then(() => loadScript('profile-lang.js?v=20260829-2')).then(() => {
+        loadScript('site-core.js?v=20260915-1').then(() => loadScript('profile-lang.js?v=20260915-1')).then(() => {
           removeExternalNavLinks();
           window.refreshProfileUI?.();
         });
