@@ -17,21 +17,19 @@
   <link rel="alternate" hreflang="zh-Hans" href="https://fanyang-psy.github.io/zh.html">
   <link rel="alternate" hreflang="x-default" href="https://fanyang-psy.github.io/">
   <link rel="icon" href="https://github.com/fanyang-psy.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=20260829-2">
+  <link rel="stylesheet" href="styles.css?v=20260915-1">
   <title>杨帆｜心理学研究者</title>
   <style>
     html[lang="zh-CN"] body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC","Helvetica Neue",Arial,sans-serif;letter-spacing:.005em}
     html[lang="zh-CN"] h1,html[lang="zh-CN"] h2,html[lang="zh-CN"] .hero-tagline,html[lang="zh-CN"] .contact-email{font-family:"Songti SC","STSong","Noto Serif SC",Georgia,serif}
     .hero-degree-zh{display:inline-block;margin-left:.42em;color:var(--muted);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Noto Sans SC",sans-serif;font-size:.18em;font-weight:600;letter-spacing:.08em;vertical-align:.22em;white-space:nowrap}
     .history-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,.62fr) minmax(0,1.35fr);gap:18px;align-items:start}.history-block,.service-block{padding:22px 24px;border:1px solid var(--line);border-radius:16px;background:var(--surface-strong)}.history-block h3,.service-block h3{margin:0 0 10px;padding-bottom:10px;border-bottom:1px solid var(--line);font-size:17px}.history-list,.service-list{list-style:none;margin:0;padding:0}.history-list li,.service-list li{padding:10px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}.history-list li:last-child,.service-list li:last-child{border-bottom:0}.history-list li{display:grid;grid-template-columns:132px 1fr;gap:16px}.history-list>li>span,.service-list small{color:var(--muted);font-size:11px;font-weight:650}.history-list strong,.service-list strong{display:block;font-size:13px;line-height:1.45}.history-list p,.service-list small{margin:3px 0 0;line-height:1.5}.contribution-grid{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.7fr);gap:18px;align-items:start}.media-list a,.media-list>li>span{display:block;color:var(--text);font-size:13px;font-weight:650;line-height:1.45;text-decoration:none}.media-list small{display:block;margin-top:3px;color:var(--muted);font-size:11px}.media-list{list-style:none;margin:0;padding:0}.media-list li{padding:9px 0;border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}.media-list li:last-child{border-bottom:0}
-    .menu-toggle{gap:4px}.menu-toggle span,.menu-toggle span+span{width:18px;height:1.5px;margin-top:0;border-radius:999px;transition:transform 180ms ease,opacity 180ms ease}.menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(5.5px) rotate(45deg)}.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(.25)}.menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-5.5px) rotate(-45deg)}
     @media(max-width:1080px){.history-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.history-grid .history-block:last-child{grid-column:1/-1}}
-    @media(max-width:920px){.site-header.is-scrolled{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;background:color-mix(in srgb,var(--bg) 96%,transparent)}.site-header{isolation:isolate}.primary-nav{z-index:110!important;top:0!important;right:0!important;bottom:0!important;left:0!important;height:100dvh;min-height:100svh;max-height:100dvh;justify-content:flex-start!important;gap:18px!important;padding:max(104px,calc(env(safe-area-inset-top) + 88px)) 10vw max(36px,calc(env(safe-area-inset-bottom) + 24px))!important;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;visibility:hidden;transform:translate3d(0,-10px,0)!important;will-change:opacity,transform}.primary-nav.is-open{visibility:visible;transform:translate3d(0,0,0)!important}.primary-nav a{font-size:clamp(30px,7vw,48px)!important;line-height:1.15}.brand,.nav-actions{position:relative;z-index:120}}
     @media(max-width:900px){.history-grid,.contribution-grid{grid-template-columns:1fr}.history-grid .history-block:last-child{grid-column:auto}}
     @media(max-width:680px){.history-block,.service-block{padding:18px}.history-list li{grid-template-columns:1fr;gap:4px}.hero-degree-zh{font-size:.2em}}
   </style>
   <script src="/visitor-stats.js" defer></script>
-  <script src="/profile-lang.js?v=20260829-2" defer></script>
+  <script src="/profile-lang.js?v=20260915-1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">跳到正文</a>
@@ -129,6 +127,7 @@
   menuToggle?.addEventListener('click',()=>{const willOpen=menuToggle.getAttribute('aria-expanded')!=='true';menuToggle.setAttribute('aria-expanded',String(willOpen));menuToggle.setAttribute('aria-label',willOpen?'关闭菜单':'打开菜单');nav?.classList.toggle('is-open',willOpen);document.body.classList.toggle('menu-open',willOpen)});
   nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+  window.addEventListener('resize',()=>{if(window.innerWidth>920)closeMenu()},{passive:true});
   const handleHeader=()=>header?.classList.toggle('is-scrolled',window.scrollY>12);handleHeader();window.addEventListener('scroll',handleHeader,{passive:true});
 })();
 </script>
